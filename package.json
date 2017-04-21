@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-hbase-client",     "homepage": "https://github.com/npmdoc/node-npmdoc-hbase-client",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-hbase-client.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [hbase-client (v1.4.0)](http://github.com/alibaba/node-hbase-client)  [![npm package](https://img.shields.io/npm/v/npmdoc-hbase-client.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hbase-client) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hbase-client.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hbase-client)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-hbase-client",
+    "keywords": [
+        "documentation",
+        "hbase-client"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_hbase_client.js",
+    "name": "npmdoc-hbase-client",
+    "nameAlias": "npmdoc_hbase_client",
+    "nameOriginal": "npmdoc-hbase-client",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-hbase-client.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
